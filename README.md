@@ -1,12 +1,8 @@
-[![Build Status](https://travis-ci.org/patoi/svelte-component-library-template.svg?branch=master)](https://travis-ci.org/patoi/svelte-component-library-template) [![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/) ![](https://github.com/patoi/svelte-component-library-template/workflows/Auto%20merge%20Dependabot%20updates/badge.svg)
+# Svelte UI Components Boilerplate with Tailwindcss and Pug
 
-# Svelte Components template
+**You can create your own component library with this boilerplate.**
 
-**You can create your own component library to your applications with this template.**
-
-A base for building Svelte component library.
-
-Original work is https://github.com/sveltejs/component-template
+A base for building Svelte components library using tailwindcss and pug.
 
 ## Using
 
@@ -14,19 +10,17 @@ Original work is https://github.com/sveltejs/component-template
 
 `Use this template` button on top right.
 
-Read more: [Creating a repository from a template](https://help.github.com/en/articles/creating-a-repository-from-a-template)
-
 **CLI:**
 
 1. Clone it with [degit](https://github.com/Rich-Harris/degit)
 
 ```bash
-npx degit patoi/svelte-component-library-template svelte-component-library-template
-cd svelte-component-library-template
+npx degit fredpies/ui-library-boilerplate your-directory
+cd ui-library-boilerplate
 npm install # or yarn
 ```
 
-2. Add your component's code to [src/](./src/) as directory, e.g.: [src/HelloComponent/](src/Test/) (or add your component directly to [src/](./src/)).
+2. Add your component's code to [src/](./src/) as directory, e.g.: [src/TestComponent/](src/Test/) (or add your component directly to [src/](./src/)).
 
 3. Export the new component to apps in [src/index.js](./src/index.js)
 
@@ -51,29 +45,25 @@ npm install # or yarn
 
 3. `npm test` : test runner
 
-For changing the view of the test page use [public/global.css](./public/global.css) and [public/index.html](./public/index.html)
+For changing the view of the test page use [tailwind-entry.css](./tailwind-entry.css) and [public/index.html](./public/index.html)
 
 ## Using components in app
 
 https://github.com/rollup/rollup-plugin-svelte#pkgsvelte
 
-**Tip:** if you are a developer of the _component library,_ then you can install it _once_ as **devDependencies** to app with `npm i -D <path-to-your-components>` , all change will appear immediately if you use livereload in app.
+**Tip:** You can use _component library,_ and install it _once_ as **devDependencies** to app with `npm i -D <path-to-your-components>`.
 
 Import _component library_ into your app in `App.svelte` :
 
 ```html
 <script>
-    import { ByeBye, Hello } from 'svelte-component-library-template'
-    export let name
+    import { Test } from 'ui-library-boilerplate'
 </script>
 
-<Hello {name} />
-<ByeBye {name} />
+<Test />
 ```
 
 ## Technical background
-
-More: https://github.com/sveltejs/sapper-template/blob/master/README.md#using-external-components
 
 -   `svelte` https://svelte.dev
 -   `nightwatch` for testing: https://nightwatchjs.org
